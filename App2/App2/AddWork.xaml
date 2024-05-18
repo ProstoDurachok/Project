@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.AddWork">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <StackLayout Orientation="Vertical">
+                    <Entry MaxLength="6" x:Name="AmountEntry" Placeholder="Сумма (в рублях)" />
+                    <Entry MaxLength="3" x:Name="DurationEntry" Placeholder="Срок выполнения (в днях)" />
+                    <Entry MaxLength="20" x:Name="Kategoria" Placeholder="Категория" />
+                </StackLayout>
+                <Editor MaxLength="100" x:Name="DescriptionEditor" Placeholder="Описание проекта" HeightRequest="100" />
+                <Button Text="Добавить проект" BackgroundColor="#2196F3" TextColor="White" CornerRadius="10" Margin="10" Clicked="OnAddProjectClicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.MainPage">
+
+    <AbsoluteLayout>
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                    <Image WidthRequest="100" HeightRequest="100" Source="photo.png"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <Button  x:Name="Registration" Text="Регистрация" WidthRequest="150" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" IsVisible="True" Clicked="RegistrationButton_Clicked"/>
+                        <Button  x:Name="Login" Text="Вход" WidthRequest="100" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" IsVisible="True" Clicked="LoginButton_Clicked"/>
+                        <Button x:Name="ProfileButton" Text="Profile" Clicked="Prof" IsVisible="False" BackgroundColor="#007bff" TextColor="White" CornerRadius="10" Margin="10" Padding="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label Text="Make your freelance wise" FontSize="30" VerticalOptions="Center"/>
+                    <Image Aspect="AspectFit" WidthRequest="150" HeightRequest="150" Source="logo.png" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="24" TextColor="Black" Text="Выберите специальность, нужную вам:" />
+                </StackLayout>
+
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="LightGray" Margin="0,0,5,5">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Margin="0,0,0,0" Source="prog.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label HorizontalOptions="Center" Text="Программирование" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="LightGray" Margin="5,0,0,5">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Source="des.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label HorizontalOptions="Center" Text="Дизайн" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="LightGray" Margin="0,5,5,0">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Source="smm.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label Text="SMM-менеджер" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="LightGray" Margin="5,5,0,0">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Source="mark.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label Text="Маркетинг" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="LightGray" Margin="0,5,5,0">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Source="copy.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label Text="Копирайтинг" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="LightGray" Margin="5,5,0,0">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <Image Source="man.png" Aspect="AspectFit" WidthRequest="70" HeightRequest="70" />
+                            <Label Text="Менеджмент" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <Label Text="Топ лучших фрилансеров" Margin="10" FontSize="24" TextColor="Black" HorizontalOptions="Center"/>
+
+                <StackLayout Margin="0,0,0,100" x:Name="YourStackLayout" Orientation="Vertical" HorizontalOptions="Center" >
+                    <Frame  CornerRadius="20" BackgroundColor="LightGray" WidthRequest="200" HeightRequest="100" Margin="0,0,0,100">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" 
+             AbsoluteLayout.LayoutBounds="0,1,1,-1">
+            <Grid BackgroundColor="#2196F3" HeightRequest="50" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Работа" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="WorkButton_Clicked"/>
+                <Button Grid.Column="1" Text="Фрилансеры" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="FreelancersButton_Clicked"/>
+                <Button Grid.Column="2" Text="Конкурсы" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="ContestsButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+
+    </AbsoluteLayout>
+
+</ContentPage>

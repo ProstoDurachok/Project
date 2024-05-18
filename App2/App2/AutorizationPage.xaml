@@ -1,0 +1,47 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.AutorizationPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#FFFFFF" Padding="20">
+                <StackLayout Orientation="Horizontal">
+                    <Image x:Name="RegistrationImage" Aspect="AspectFit" WidthRequest="150" HeightRequest="100" HorizontalOptions="Center" Source="photo.png" />
+                    <Label x:Name="RegistrationLabel" Text="Регистрация" HorizontalTextAlignment="Center" Margin="-40,35,25,0" TextColor="#000000" FontSize="28"/>
+                </StackLayout>
+
+                <Frame x:Name="UsernameFrame"  HeightRequest="35" Margin="0,20,0,0" BackgroundColor="#F1F1F1" CornerRadius="5">
+                    <Entry x:Name="UsernameEntry"  MaxLength="20" Placeholder="Имя пользователя" PlaceholderColor="#000000" FontSize="14"/>
+                </Frame>
+
+                <Frame x:Name="EmailFrame" HeightRequest="35" Margin="0,20,0,0" BackgroundColor="#F1F1F1" CornerRadius="5">
+                    <Entry x:Name="EmailEntry"  MaxLength="20" Placeholder="Почта" PlaceholderColor="#000000" FontSize="14"/>
+                </Frame>
+
+                <Frame x:Name="PasswordFrame" HeightRequest="35" Margin="0,20,0,0" BackgroundColor="#F1F1F1" CornerRadius="5">
+                    <Entry x:Name="PasswordEntry"  MaxLength="20" Placeholder="Пароль" PlaceholderColor="#000000" FontSize="14" IsPassword="True"/>
+                </Frame>
+
+                <Frame x:Name="ConfirmPasswordFrame" HeightRequest="35" Margin="0,20,0,0" BackgroundColor="#F1F1F1" CornerRadius="5">
+                    <Entry x:Name="ConfirmPasswordEntry"  MaxLength="20"  Placeholder="Подтвердите пароль" PlaceholderColor="#000000" FontSize="14" IsPassword="True"/>
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                    <RadioButton x:Name="FreelancerRadioButton"  CheckedChanged="OnRadioButtonCheckedChanged" />
+                    <Label TextColor="#000000" Text="Фрилансер" FontSize="14" VerticalOptions="Center"/>
+
+                    <RadioButton x:Name="EmployerRadioButton" Margin="100,0,0,0" CheckedChanged="OnRadioButtonCheckedChanged" />
+                    <Label TextColor="#000000" Text="Работодатель" FontSize="14" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <Button Text="Зарегистрироваться" Clicked ="RegisterButton_Clicked"  Margin="0,20,0,0" CornerRadius="5" FontSize="20" BackgroundColor="#2194F3" TextColor="White"/>
+
+                <Label Text="Уже есть аккаунт? " TextColor="#2194F3" Margin="0,20,0,0" FontSize="14" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label x:Name="displayLabel" Margin="0,0,0,400" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

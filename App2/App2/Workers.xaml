@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Workers">
+    <AbsoluteLayout>
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                    <Image WidthRequest="100" HeightRequest="100" Source="photo.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Image_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <Button  x:Name="Registration" Text="Регистрация" WidthRequest="150" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" Clicked="RegistrationButton_Clicked"/>
+                        <Button  x:Name="Login" Text="Вход" WidthRequest="100" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" Clicked="LoginButton_Clicked"/>
+                        <Button x:Name="ProfileButton" Text="Profile" Clicked="Prof" IsVisible="False" BackgroundColor="#007bff" TextColor="White" CornerRadius="10" Margin="10" Padding="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="Топ лучших работодателей" TextColor="Black" FontSize="24" Margin="8" HorizontalOptions="Center"/>
+
+                <StackLayout x:Name="YourStackLayout" Orientation="Vertical" HorizontalOptions="Center">
+                    <Frame  CornerRadius="20" BackgroundColor="LightGray" WidthRequest="200" HeightRequest="100" Margin="0,0,0,70">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" 
+         AbsoluteLayout.LayoutBounds="0,1,1,-1">
+            <Grid BackgroundColor="#2196F3" HeightRequest="50" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Работа" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="WorkButton_Clicked"/>
+                <Button Grid.Column="1" Text="Заказчики" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand"/>
+                <Button Grid.Column="2" Text="Конкурсы" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="ContestsButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Contests">
+    <AbsoluteLayout>
+
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                    <Image WidthRequest="100" HeightRequest="100" Source="photo.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Image_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <Button  x:Name="Registration" Text="Регистрация" WidthRequest="150" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" Clicked="RegistrationButton_Clicked"/>
+                        <Button  x:Name="Login" Text="Вход" WidthRequest="100" HeightRequest="40" CornerRadius="15" BackgroundColor="#2196F3" TextColor="White" Clicked="LoginButton_Clicked"/>
+                        <Button x:Name="ProfileButton" Text="Profile" Clicked="Prof" IsVisible="False" BackgroundColor="#007bff" TextColor="White" CornerRadius="10" Margin="10" Padding="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Button Text="Показать фильтры" Clicked="OnShowProjectsClicked" BackgroundColor="#007bff" TextColor="White" CornerRadius="10" Margin="10" Padding="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+                <Button Text="Добавить Конкурс" x:Name="AddButton" Clicked="Add" BackgroundColor="#007bff" TextColor="White" CornerRadius="10" Margin="10" Padding="10" FontSize="18" HorizontalOptions="FillAndExpand" />
+
+                <Grid  x:Name="MyGrid" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Frame x:Name="My" BackgroundColor="White" CornerRadius="10"  Margin="20">
+
+                        <StackLayout x:Name="MyStack"></StackLayout>
+
+                    </Frame>
+                </Grid>
+                <Frame CornerRadius="10" HasShadow="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Margin="0,0,0,80" x:Name="MyStackLayout"></StackLayout>
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" 
+   AbsoluteLayout.LayoutBounds="0,1,1,-1">
+            <Grid BackgroundColor="#2196F3" HeightRequest="50" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="Работа" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="WorkButton_Clicked"/>
+                <Button Grid.Column="1" Text="Фрилансеры" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" Clicked="FreelancersButton_Clicked"/>
+                <Button Grid.Column="2" Text="Конкурсы" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="FillAndExpand" />
+            </Grid>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
